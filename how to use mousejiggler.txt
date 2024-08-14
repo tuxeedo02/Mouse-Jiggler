@@ -1,0 +1,35 @@
+1)- Make sure you have python & python 3 installed and up to date
+
+2)- Install pip and pyautogui in terminal
+
+Linux and MacOS
+
+Run in terminal "python get-pip.py", 
+then run "python3 -m pip install pyautogui"
+
+For Win it looks like 
+
+"C:> py get-pip.py", 
+then "C:> py -m pip install pyautogui"
+
+3)- Move terminal working directory to the folder containing mousejiggler.py
+
+Using the cd command move to folder containing the python file
+
+*for convenience on linux/macos systems, place mousejiggler.py in your home directory
+
+4)- Run the app from terminal
+
+Linux
+"python3 mousejiggler.py"
+
+MacOs
+"python mousejiggler.py"
+
+Win
+"python mousejiggler.py"
+
+
+5)- Change the interval of movements by changing x seconds in time.sleep(x)
+in mousejiggler.py
+
