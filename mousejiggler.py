@@ -19,24 +19,25 @@ def wiggle_mouse() -> None:
         pyautogui.moveTo(
             x=coords[0], 
             y=coords[1],
-            duration=2
+            duration=0.01
         )
         time.sleep(90)
     
-
 def get_random_coords() -> []:
     """
-    Returns a list of coordinates in the 
-    format [x=1366, y=768]
+    Returns a list of coordinates within 10 pixels of the current mouse position.
     """
-    screen = pyautogui.size()
-    width = screen[0]
-    height = screen[1]
+    current_x, current_y = pyautogui.position()
     
-    return [
-        random.randint(100, width - 200),
-        random.randint(100, height - 200)
-    ]
+    new_x = current_x + random.randint(-10, 10)
+    new_y = current_y + random.randint(-10, 10)
+    
+    # Ensure the new coordinates are within the screen boundaries
+    screen_width, screen_height = pyautogui.size()
+    new_x = max(0, min(new_x, screen_width - 1))
+    new_y = max(0, min(new_y, screen_height - 1))
+    
+    return [new_x, new_y]
 
 
 if __name__ == "__main__":
